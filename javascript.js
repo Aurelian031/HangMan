@@ -3,7 +3,7 @@
         document.getElementById("inputWord").value = "";
 
         let underscoreWord = "";
-        for (let i = 0; i < word.length; i++) {
+        for (let i = 0; i < word.length; ++i) {
             underscoreWord += "_ ";
         }
 
@@ -30,7 +30,7 @@
         let underscoreWord = localStorage.getItem("underscoreWord"); // Retrieve the underscoreWord from localStorage
         let lives = localStorage.getItem("lives"); // Retrieve the value of lives from localStorage
 
-        for (let i = 0; i < word.length; i++) {
+        for (let i = 0; i < word.length; ++i) {
             if (word[i] === letter) {
                 underscoreWord = underscoreWord.substring(0, 2 * i) + letter + underscoreWord.substring(2 * i + 1); // Add the letter to the underscoreWord if there is a letter to add
             }
@@ -52,7 +52,7 @@
         let lives = localStorage.getItem("lives"); // Retrieve the value of lives from localStorage
         let thereIsNoLetterToAdd = true;
 
-        for (let i = 0; i < underscoreWord.length; i++) {  // If all the letters have been found, we keep track of it 
+        for (let i = 0; i < underscoreWord.length; ++i) {  // If all the letters have been found, we keep track of it 
             if (underscoreWord[i] === "_") {
             thereIsNoLetterToAdd = false;
             }
